@@ -1,0 +1,32 @@
+{
+  "name": "Arabic-Extended Keyboard (AEK)",
+  "short_name": "aek",
+  "version": "0.2",
+  "license": "MIT",
+  "base": "Arabic 101 (Windows KBDA1 / XKB ara(basic)); base layer is untouched",
+  "orthography_reference": "Masri Writing System (Diaa Hassouna, CC BY 4.0): Arabic-V (vocalized), Arabic-S (dedicated vowel letters), Arabic-P (plain)",
+  "layers": {
+    "shift":       { "klc_state": 1, "xkb_level": 2, "note": "only Shift+Space is used" },
+    "altgr":       { "klc_state": 6, "xkb_level": 3, "note": "Right Alt (Ctrl+Alt on Windows)" },
+    "shift_altgr": { "klc_state": 7, "xkb_level": 4 }
+  },
+  "entries": [
+    { "id": "peh",   "label": "پ", "codepoints": ["067E"], "unicode_name": "ARABIC LETTER PEH",   "layer": "altgr", "us_key": "F", "sc": "21", "vk": "F",          "xkb": "AC04", "mobile": { "long_press_on": "ب" }, "arabic_v": "Masri P (/p/)" },
+    { "id": "tcheh", "label": "چ", "codepoints": ["0686"], "unicode_name": "ARABIC LETTER TCHEH", "layer": "altgr", "us_key": "[", "sc": "1A", "vk": "OEM_4",     "xkb": "AD11", "mobile": { "long_press_on": "ج" }, "arabic_v": "Masri J (/ʒ/), AV-C04" },
+    { "id": "veh",   "label": "ڤ", "codepoints": ["06A4"], "unicode_name": "ARABIC LETTER VEH",   "layer": "altgr", "us_key": "T", "sc": "14", "vk": "T",          "xkb": "AD05", "mobile": { "long_press_on": "ف" }, "arabic_v": "Masri V (/v/)" },
+    { "id": "gaf",   "label": "گ", "codepoints": ["06AF"], "unicode_name": "ARABIC LETTER GAF",   "layer": "altgr", "us_key": ";", "sc": "27", "vk": "OEM_1",     "xkb": "AC10", "mobile": { "long_press_on": "ك" }, "arabic_v": "not used in Arabic-V; Iraqi/Gulf/Persian /g/" },
+    { "id": "oe",    "label": "ۆ", "codepoints": ["06C6"], "unicode_name": "ARABIC LETTER OE",    "layer": "altgr", "us_key": ",", "sc": "33", "vk": "OEM_COMMA", "xkb": "AB08", "mobile": { "long_press_on": "و" }, "arabic_v": "not used", "arabic_s": "ou /o/~/oː/ (doubled ۆۆ = long, e.g. Farduus فاردۆۆس)", "arabic_p": "vowel letter for writers who choose not to use diacritics", "other_uses": "Kurdish, Uyghur, Kazakh, Azerbaijani, Bosnian" },
+    { "id": "yeh_v", "label": "ێ", "codepoints": ["06CE"], "unicode_name": "ARABIC LETTER YEH WITH SMALL V", "layer": "altgr", "us_key": "D", "sc": "20", "vk": "D", "xkb": "AC03", "mobile": { "long_press_on": "ي" }, "arabic_v": "not used", "arabic_s": "é /ɛ/ (doubled ێێ = long éé, e.g. asanséér ءاسانسێێر)", "arabic_p": "vowel letter for writers who choose not to use diacritics", "other_uses": "Kurdish" },
+    { "id": "jeh",   "label": "ژ", "codepoints": ["0698"], "unicode_name": "ARABIC LETTER JEH",   "layer": "altgr", "us_key": ".", "sc": "34", "vk": "OEM_PERIOD", "xkb": "AB09", "mobile": { "long_press_on": "ز" }, "arabic_v": "loanword /ʒ/ (Persian/Kurdish/others)" },
+
+    { "id": "small_high_seen", "label": "◌ۜ", "codepoints": ["06DC"], "unicode_name": "ARABIC SMALL HIGH SEEN", "layer": "altgr", "us_key": "S", "sc": "1F", "vk": "S", "xkb": "AC02", "mobile": { "popup": "harakat" }, "arabic_v": "AV-R05 wa/ya separation; AV-C02 ث→/s/; AV-C03 ذ→/z/. Type last in the mark order." },
+    { "id": "hamza_above",     "label": "◌ٔ", "codepoints": ["0654"], "unicode_name": "ARABIC HAMZA ABOVE",     "layer": "altgr", "us_key": "X", "sc": "2D", "vk": "X", "xkb": "AB02", "mobile": { "popup": "harakat" }, "arabic_v": "AV-C01 Cairene ق→/ʔ/ (type after ق)" },
+    { "id": "high_hamza",      "label": "ٴ",  "codepoints": ["0674"], "unicode_name": "ARABIC LETTER HIGH HAMZA", "layer": "shift_altgr", "us_key": "X", "sc": "2D", "vk": "X", "xkb": "AB02", "mobile": { "popup": "harakat" }, "arabic_v": "secondary; a LETTER (Lo), non-joining, does not stack automatically" },
+
+    { "id": "long_aa", "label": "ـّْا", "codepoints": ["0627", "0651", "0652"], "unicode_name": "ALEF + SHADDA + SUKUN", "layer": "shift_altgr", "us_key": "H", "sc": "23", "vk": "H",         "xkb": "AC06", "mobile": { "popup": "vowels" }, "arabic_v": "long aa carrier (AV-R01); type fatha on the consonant first" },
+    { "id": "long_ee", "label": "ـّْي", "codepoints": ["064A", "0651", "0652"], "unicode_name": "YEH + SHADDA + SUKUN",  "layer": "shift_altgr", "us_key": "D", "sc": "20", "vk": "D",         "xkb": "AC03", "mobile": { "popup": "vowels" }, "arabic_v": "long ee carrier (AV-R01); type kasra on the consonant first" },
+    { "id": "long_oo", "label": "ـّْو", "codepoints": ["0648", "0651", "0652"], "unicode_name": "WAW + SHADDA + SUKUN",  "layer": "shift_altgr", "us_key": ",", "sc": "33", "vk": "OEM_COMMA", "xkb": "AB08", "mobile": { "popup": "vowels" }, "arabic_v": "long oo carrier (AV-R01); type damma on the consonant first" },
+
+    { "id": "zwnj", "label": "ZWNJ", "codepoints": ["200C"], "unicode_name": "ZERO WIDTH NON-JOINER", "layer": "shift", "us_key": "Space", "sc": "39", "vk": "SPACE", "xkb": "SPCE", "mobile": { "long_press_on": "space" }, "arabic_v": "joining control, useful with U+0674" }
+  ]
+}
