@@ -49,7 +49,7 @@ AltGr is Right Alt. All additions sit on the same physical key as their parent l
 | ـّْو (waw + shadda + sukūn) | U+0648 U+0651 U+0652 | Compose, و, و | | | ✓ |
 | ZWNJ | U+200C | Shift+Space | Shift | Ctrl+Shift+2 (built in) | ✓ |
 
-The standard harakat stay where Arabic 101 already has them. On mobile, the letters are planned as long-press popups on their parent letter (پ on ب, چ on ج, ڤ on ف, گ on ك, ۆ on و, ێ on ي, ژ on ز).
+The standard harakat stay where Arabic 101 already has them. On mobile, the letters are planned as long-press popups on their parent letter (پ on چ , ب on ڤ , ج on گ , ف on ۆ , ك on ێ , و on ژ , ي on ز).
 
 ## Who uses what
 
