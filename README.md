@@ -53,7 +53,7 @@ The standard harakat stay where Arabic 101 already has them. On mobile, the lett
 
 ## Who uses what
 
-**Arabic-V** (vocalized Masri): U+06DC separates a consonantal و/ي from its fatha (*wa*, *ya*) and marks Cairene ث → /s/ and ذ → /z/. U+0654 marks Cairene ق → /ʔ/. Long vowels are a carrier letter with shadda and sukūn, which the Compose sequences type in one go. Arabic-V does not use ۆ or ێ.
+**Arabic-V** (vocalized Masri): U+06DC ◌ۜ separates a consonantal و/ي from its fatha (*wa*, *ya*) and marks Cairene ث → /s/ and ذ → /z/. U+0654 ◌ٔ marks Cairene ق → /ʔ/. Long vowels are a carrier letter with shadda and sukūn, which the Compose sequences type in one go. Arabic-V does not use ۆ or ێ.
 
 **Arabic-S and Arabic-P** (no diacritics): ۆ and ێ are the dedicated vowel letters. In Arabic-S, ێ is é /ɛ/ and ۆ is ou /o/; doubling gives the long vowel (ێێ, ۆۆ).
 
