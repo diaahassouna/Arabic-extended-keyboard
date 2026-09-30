@@ -1,8 +1,0 @@
-# AEK v0.2 - multi-character keys for Linux. GENERATED from aek.json.
-# SPDX-License-Identifier: MIT - Copyright (c) 2026 Diaa Hassouna
-# Install as ~/.XCompose. Press Compose (Right Ctrl with compose:rctrl), then the letter twice.
-include "%L"
-
-<Multi_key> <Arabic_alef> <Arabic_alef> : "اّْ"   # ALEF + SHADDA + SUKUN
-<Multi_key> <Arabic_yeh> <Arabic_yeh> : "يّْ"   # YEH + SHADDA + SUKUN
-<Multi_key> <Arabic_waw> <Arabic_waw> : "وّْ"   # WAW + SHADDA + SUKUN
