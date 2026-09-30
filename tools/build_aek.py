@@ -55,8 +55,11 @@ def gen_xkb():
     for name, levels in sorted(keys.items()):
         n = max(levels)
         syms = [levels.get(i, "NoSymbol") for i in range(1, n + 1)]
-        typ = "TWO_LEVEL" if n == 2 else "FOUR_LEVEL"
-        out.append('    key <%s> { type[Group1] = "%s", [ %s ] };' % (name, typ, ", ".join(syms)))
+        # No explicit type: an explicit type[Group1] makes xkbcomp discard the base key's
+        # other levels (e.g. the RLM that ara(basic) keeps on Shift+AltGr+[). Only the
+        # Space key needs one, because its base type is single-level.
+        typ = 'type[Group1] = "TWO_LEVEL", ' if name == "SPCE" else ""
+        out.append("    key <%s> { %s[ %s ] };" % (name, typ, ", ".join(syms)))
     out.append("};")
     return "\n".join(out) + "\n"
 

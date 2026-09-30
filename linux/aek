@@ -8,14 +8,14 @@ xkb_symbols "basic" {
     include "level3(ralt_switch)"
     name[Group1] = "Arabic (Extended, AEK)";
 
-    key <AB02> { type[Group1] = "FOUR_LEVEL", [ NoSymbol, NoSymbol, U0654, U0674 ] };
-    key <AB08> { type[Group1] = "FOUR_LEVEL", [ NoSymbol, NoSymbol, U06C6 ] };
-    key <AB09> { type[Group1] = "FOUR_LEVEL", [ NoSymbol, NoSymbol, U0698 ] };
-    key <AC02> { type[Group1] = "FOUR_LEVEL", [ NoSymbol, NoSymbol, U06DC ] };
-    key <AC03> { type[Group1] = "FOUR_LEVEL", [ NoSymbol, NoSymbol, U06CE ] };
-    key <AC04> { type[Group1] = "FOUR_LEVEL", [ NoSymbol, NoSymbol, U067E ] };
-    key <AC10> { type[Group1] = "FOUR_LEVEL", [ NoSymbol, NoSymbol, U06AF ] };
-    key <AD05> { type[Group1] = "FOUR_LEVEL", [ NoSymbol, NoSymbol, U06A4 ] };
-    key <AD11> { type[Group1] = "FOUR_LEVEL", [ NoSymbol, NoSymbol, U0686 ] };
+    key <AB02> { [ NoSymbol, NoSymbol, U0654, U0674 ] };
+    key <AB08> { [ NoSymbol, NoSymbol, U06C6 ] };
+    key <AB09> { [ NoSymbol, NoSymbol, U0698 ] };
+    key <AC02> { [ NoSymbol, NoSymbol, U06DC ] };
+    key <AC03> { [ NoSymbol, NoSymbol, U06CE ] };
+    key <AC04> { [ NoSymbol, NoSymbol, U067E ] };
+    key <AC10> { [ NoSymbol, NoSymbol, U06AF ] };
+    key <AD05> { [ NoSymbol, NoSymbol, U06A4 ] };
+    key <AD11> { [ NoSymbol, NoSymbol, U0686 ] };
     key <SPCE> { type[Group1] = "TWO_LEVEL", [ NoSymbol, U200C ] };
 };

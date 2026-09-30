@@ -49,7 +49,7 @@ AltGr is Right Alt. All additions sit on the same physical key as their parent l
 | ـّْو (waw + shadda + sukūn) | U+0648 U+0651 U+0652 | Compose, و, و | | | ✓ |
 | ZWNJ | U+200C | Shift+Space | Shift | Ctrl+Shift+2 (built in) | ✓ |
 
-The standard harakat stay where Arabic 101 already has them. On mobile, the letters are planned as long-press popups on their parent letter (پ on ب) (چ on ج) (ڤ on ف) (گ on ك) (ۆ on و) (ێ on ي) (ژ on ز).
+The standard harakat stay where Arabic 101 already has them. On mobile, the letters are planned as long-press popups on their parent letter (پ on ب, چ on ج, ڤ on ف, گ on ك, ۆ on و, ێ on ي, ژ on ز).
 
 ## Who uses what
 
@@ -85,7 +85,8 @@ arabic-extended-keyboard/
 │       ├── amd64/  i386/  wow64/    AEK.dll for each architecture
 │       └── README.txt
 └── tools/
-    └── build_aek.py         generates linux/ and windows/AEK.klc from layout/aek.json
+    ├── build_aek.py         generates linux/ and windows/AEK.klc from layout/aek.json
+    └── verify_xkb.py        checks that linux/aek leaves the base layer alone
 ```
 
 ## Building from source
@@ -97,6 +98,7 @@ python tools/build_aek.py xkb
 python tools/build_aek.py xcompose
 python tools/build_aek.py klc --base A.klc
 python tools/build_aek.py all --base A.klc
+python tools/verify_xkb.py        # checks linux/aek against plain ara(basic); needs xkbcomp
 ```
 
 (On Windows the command is usually `python`, not `python3`.)
@@ -109,7 +111,8 @@ The three long-vowel keys are not added on Windows by default; `--with-helpers` 
 
 ## Notes and limitations
 
-- **Tested:** the XKB file compiles with `xkbcomp` on top of `ara(basic)` and resolves to the intended keys. `windows/AEK.klc` was built into the installer with MSKLC, and the built DLLs contain all ten added characters.
+- **Tested:** `python tools/verify_xkb.py` compiles plain `ara(basic)` and `linux/aek` with `xkbcomp` and checks that every key outside the declared AEK slots is identical, including levels 1–2 (the Arabic 101 layer). `windows/AEK.klc` was built into the installer with MSKLC, and the built DLLs contain all ten added characters.
+- **Linux base layer:** levels 1–2 are untouched (the only difference is Space level 2, now ZWNJ). Linux `ara(basic)` also has its own AltGr layer, which Windows Arabic 101 lacks. There پ چ ڤ گ ژ were already at the same positions, so AEK changes nothing for them. AEK displaces exactly three of its symbols: « and ‹ on AltGr+X and Shift+AltGr+X (now ◌ٔ and ٴ), and the Arabic thousands separator U+066C on AltGr+`,` (now ۆ). « and » stay available through the standard Compose sequences (Compose < < and Compose > >).
 - **ZWNJ on Windows:** MSKLC accepts only whitespace on the Space key, so the Windows layout has no Shift+Space ZWNJ. Use Ctrl+Shift+2, which Arabic 101 already provides. On Linux, Shift+Space may clash with a layout-switching hotkey on some systems.
 - **MSKLC warnings:** the verifier warns that ۆ ێ پ ڤ ◌ۜ ◌ٔ ٴ are outside code page 1256. That only affects non-Unicode legacy applications and does not block the build.
 - **U+0674 is a letter**, not a combining mark. It does not stack over the previous letter and it interrupts joining, so it is a secondary key. Use ZWNJ around it and test with your target fonts (Amiri, Scheherazade New, Noto Naskh Arabic).
